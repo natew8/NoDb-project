@@ -1,0 +1,90 @@
+[
+    {
+        "id": 0,
+        "song_title": "Human Nature",
+        "artist_name": "Michael Jackson",
+        "song_key": "D",
+        "time": "4:05",
+        "url": "https://tabs.ultimate-guitar.com/tab/michael-jackson/human-nature-chords-212731"
+    },
+    {
+        "id": 1,
+        "song_title": "Gravity",
+        "artist_name": "John Mayer",
+        "song_key": "G",
+        "time": "4:05",
+        "url": "https://tabs.ultimate-guitar.com/tab/john-mayer/gravity-chords-641307"
+    },
+    {
+        "id": 2,
+        "song_title": "Brown Eyed Lover",
+        "artist_name": "Allen Stone",
+        "song_key": "E",
+        "time": "3:57",
+        "url": "https://tabs.ultimate-guitar.com/tab/allen-stone/brown-eyed-lover-chords-2606460"
+    },
+    {
+        "id": 3,
+        "song_title": "Fake Plastic Trees",
+        "artist_name": "Radiohead",
+        "song_key": "A",
+        "time": "4:50",
+        "url": "https://tabs.ultimate-guitar.com/tab/radiohead/fake-plastic-trees-chords-140939"
+    },
+    {
+        "id": 4,
+        "song_title": "Honesty",
+        "artist_name": "Pink Sweat$",
+        "song_key": "A",
+        "time": "3:09",
+        "url": "https://genius.com/Pink-sweat-honesty-lyrics"
+    },
+    {
+        "id": 5,
+        "song_title": "One Day",
+        "artist_name": "Nate Waite",
+        "song_key": "F",
+        "time": "3:57",
+        "url": "https://www.youtube.com/watch?v=L2Z73dxGIIU"
+    },
+    {
+        "id": 6,
+        "song_title": "Moment",
+        "artist_name": "Jay Warren",
+        "song_key": "A",
+        "time": "3:15",
+        "url": "https://www.youtube.com/watch?v=Vign_i9G6Yw"
+    },
+    {
+        "id": 7,
+        "song_title": "Beyond",
+        "artist_name": "Leon Bridges",
+        "song_key": "F#",
+        "time": "4:00",
+        "url": "https://tabs.ultimate-guitar.com/tab/leon-bridges/beyond-chords-2371937"
+    },
+    {
+        "id": 8,
+        "song_title": "Im On Fire",
+        "artist_name": "Bruce Springsteen",
+        "song_key": "E",
+        "time": "2:36",
+        "url": "https://tabs.ultimate-guitar.com/tab/bruce-springsteen/im-on-fire-chords-1047368"
+    },
+    {
+        "id": 9,
+        "song_title": "At Last",
+        "artist_name": "Etta James",
+        "song_key": "F",
+        "time": "3:00",
+        "url": "https://tabs.ultimate-guitar.com/tab/etta-james/at-last-chords-1398923"
+    },
+    {
+        "id": 10,
+        "song_title": "The Way You Make me Feel",
+        "artist_name": "Michael Jackson",
+        "song_key": "E",
+        "time": "5:00",
+        "url": "https://tabs.ultimate-guitar.com/tab/michael-jackson/the-way-you-make-me-feel-chords-842560"
+    }
+]
