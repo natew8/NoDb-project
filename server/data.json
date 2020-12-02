@@ -86,5 +86,45 @@
         "song_key": "E",
         "time": "5:00",
         "url": "https://tabs.ultimate-guitar.com/tab/michael-jackson/the-way-you-make-me-feel-chords-842560"
+    },
+    {
+        "id": 11,
+        "song_title": "The Bird",
+        "artist_name": "Anderson .Paak",
+        "song_key": "Bbm",
+        "time": "3:37",
+        "url": "https://genius.com/Anderson-paak-the-bird-lyrics"
+    },
+    {
+        "id": 12,
+        "song_title": "Slow Burn",
+        "artist_name": "Kacey Musgraves",
+        "song_key": "A",
+        "time": "4:06",
+        "url": "https://tabs.ultimate-guitar.com/tab/kacey-musgraves/slow-burn-chords-2365809"
+    },
+    {
+        "id": 13,
+        "song_title": "Can I Be Him",
+        "artist_name": "James Arthur",
+        "song_key": "B",
+        "time": "4:06",
+        "url": "https://tabs.ultimate-guitar.com/tab/james-arthur/can-i-be-him-chords-2018071"
+    },
+    {
+        "id": 14,
+        "song_title": "Particles",
+        "artist_name": "Nothing But Thieves",
+        "song_key": "Bm",
+        "time": "3:55",
+        "url": "https://tabs.ultimate-guitar.com/tab/nothing-but-thieves/particles-chords-2143281"
+    },
+    {
+        "id": 15,
+        "song_title": "A Little Bit Yours",
+        "artist_name": "JP Sax",
+        "song_key": "C#",
+        "time": "3:45",
+        "url": "https://tabs.ultimate-guitar.com/tab/jp-saxe/a-little-bit-yours-chords-3320099"
     }
 ]

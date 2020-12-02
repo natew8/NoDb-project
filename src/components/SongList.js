@@ -11,7 +11,7 @@ class SongList extends Component {
             id: props.id
         }
     }
-    handleUpdateSong = (id, songObj) => {
+    handleState = (id, songObj) => {
         this.props.updateSong(id, songObj)
         setTimeout(() => {
             this.setState({
@@ -24,7 +24,7 @@ class SongList extends Component {
             songToEdit: songObj
         })
     }
-    handlePlayListAdd = (id) => {
+    handleSetListAdd = (id) => {
         this.props.addToSetList(id)
     }
     render(props) {
@@ -33,7 +33,7 @@ class SongList extends Component {
                 <Song
                     key={index}
                     song={e}
-                    handlePlayListAdd={this.handlePlayListAdd}
+                    handleSetListAdd={this.handleSetListAdd}
                     deleteSong={this.props.deleteSong}
                     updateSong={this.props.updateSong}
                     songList={this.props.songList}
@@ -46,7 +46,7 @@ class SongList extends Component {
                 <AddSong newSong={this.props.newSong}
                     songToEdit={this.state.songToEdit}
                     updateSong={this.props.updateSong}
-                    handleUpdateSong={this.handleUpdateSong} />
+                    handleState={this.handleState} />
             </div>
         )
     }

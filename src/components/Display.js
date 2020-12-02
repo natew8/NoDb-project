@@ -20,8 +20,12 @@ class Display extends Component {
 
     componentDidMount() {
         axios.get('/api/songList').then(res => {
-            this.setState({
-                songList: res.data,
+            axios.get('/api/setList').then(setRes => {
+                this.setState({
+                    songList: res.data,
+                    setList: setRes.data
+
+                })
             })
         })
     }
@@ -53,15 +57,22 @@ class Display extends Component {
     }
     addToSetList(id) {
         console.log(id)
-        axios.post(`/api/setList/${id}`).then(res => {
+        axios.post(`/api/setList/${id}`).then(setRes => {
             this.setState({
-                setList: res.data
+                setList: setRes.data
             })
+        }).catch((err) => {
+            alert(err.response.data)
         })
     }
 
     removeSong(id) {
         console.log(id)
+        axios.delete(`/api/setList/${id}`).then(res => {
+            this.setState({
+                setList: res.data
+            })
+        })
     }
 
     render() {
@@ -73,6 +84,7 @@ class Display extends Component {
                     removeSong={this.removeSong}
                 />
                 <SongList
+                    setList={this.state.setList}
                     newSong={this.newSong}
                     updateSong={this.updateSong}
                     deleteSong={this.deleteSong}

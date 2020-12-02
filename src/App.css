@@ -1,3 +1,9 @@
+/* color scheme
+#426e82
+#18171a
+#a3a0a1 
+#f7f9fc*/
+/*----------------------------------------------------------------------------- MAIN  */
 *{
   box-sizing: border-box;
 }
@@ -24,7 +30,6 @@ body{
 }
 .footer{
   height: 5vh;
-  /* width: 100%; */
   width: 70.123vw;
   padding: 20px;
   display: flex;
@@ -36,21 +41,84 @@ body{
   color: white;
   bottom: 0;
 }
+
+
+/* -----------------------------------------------------------------------------Set-List */
 .set-list-container{
   height: 85vh;
   width: 65vw;
   position: fixed;
   left: 2.5vw;
-  bottom: 3.3vh;
+  bottom: 5.3vh;
   display: flex;
+  padding: 0%;
   flex-direction: column;
-  background-color: rgb(255, 255, 255);
+  align-items: left;
+  background-color:#f7f9fc;
   margin:0,auto;
+  overflow:scroll;
+  box-shadow: 0px 0px 15px black;
 }
 .set-list-title{
+  width: 10vw;
   text-align: left;
   padding-left: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #c3c0c1;
+  margin-left: 10px;
+  margin-top: 10px;
 }
+a:hover{
+  color: #426e42;
+}
+li{
+  width: 60.6vw;
+  display: flex;
+  font-size: large;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  text-justify: left;
+}
+.list-title{
+  width: 400px;
+  text-align: left;
+}
+.small-items{
+  font-weight: 100;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.list-small-item{
+  width: 50px;
+}
+.remove-button-div{
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-items: right;
+}
+.remove-button{
+  height: 33px;
+  width: 33px;
+  margin-left: 50px;
+}
+a{
+  color: #282c34;
+  text-decoration: none;
+}
+#notes-input{
+  width: 300px;
+  height: 30px;
+  overflow: scroll;
+}
+#notes-input:focus{
+  background-color: #c3c0c1;
+}
+
+/*----------------------------------------------------------------------------- SongList */
 .songList-container{
   height: 79vh;
   width: 30vw;
@@ -65,7 +133,7 @@ body{
 .title-container{
   height: 5.5vh;
   width: 30vw;
-  background-color: #a3a0a1;
+  background-color: #c3c0c1;
   color:#f7f9fc;
   position: absolute;
   right: 0;
@@ -74,18 +142,6 @@ body{
 }
 .song-list-title{
   font-size: 1.5em;
-}
-.key-container{
-  background-color: white;
-  height: 5vh;
-  width: 30vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position:fixed;
-  top: 13vh;
-  border-top: 1px solid #282c34;
-  border-bottom: 1px solid #282c34;
 }
 
 .song-container{
@@ -113,7 +169,13 @@ body{
   flex-direction: column;
   align-content: center;
   text-align: left;
-
+}
+.name-title-div:hover{
+  color: #426e82;
+  cursor: pointer;
+}
+.name-title-div:active{
+  columns: #a3a0a1;;
 }
 .song-title{
   font-size: 1.5em;
@@ -122,6 +184,7 @@ body{
 .artist-name{
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
+  font-weight: 100;
 }
 
 .add-to-playlist{
@@ -131,7 +194,7 @@ body{
 .add-to-playlist:hover{
   height: 36px;
   width: 36px;
-  cursor: crosshair;
+  cursor: pointer;
 }
 .song-delete-button{
   height: 30px;
@@ -140,8 +203,12 @@ body{
 .song-delete-button:hover{
  background: rgb(255, 0, 0);
  border-radius: 50%;
+ cursor: pointer;
 }
 
+
+
+/*----------------------------------------------------------------------------- ADD NEW SONG */
 .input-box{
   height: 16.8vh;
   width: 30vw;
@@ -169,12 +236,9 @@ justify-content: center;
 input{
   border: none;
   outline: none;
-}
-.add-update-button{
-  width: 100px;
-  background: none;
-  border: none;
-  outline: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  background-color: #f7f9fc;
 }
 #title-input{
   margin-right: 5px;
@@ -182,9 +246,14 @@ input{
 #time-input{
   margin-right: 5px;
 }
+.url-input{
+  width: 52.7%;
+}
+.add-update-button{
+  width: 100px;
+  background: none;
+  border: none;
+  outline: none;
+}
 
-/* color scheme
-#426e82
-#18171a
-#a3a0a1 
-#f7f9fc*/
+

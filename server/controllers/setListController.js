@@ -1,7 +1,5 @@
 const songs = require('../data.json')
-const setList = {
-    list: []
-}
+const setList = []
 
 let listId = 0
 
@@ -19,29 +17,32 @@ module.exports = {
         } else {
             const song = songs.find((element) => element.id === +song_id)
             song.list_id = listId
+            if (setList.includes(song)) {
+                res.status(500).send('Song already in Set List')
+            } else {
+                setList.push(song)
+                listId++
+                res.status(200).send(setList)
+            }
 
-            setList.list.push(song)
 
-            listId++
-
-            res.status(200).send(setList)
         }
 
     },
 
     removeSong: (req, res) => {
         const { list_id } = req.params
-        const index = setList.list.findIndex(e => e.id === +list_id)
+        const index = setList.findIndex(e => e.id === +list_id)
         if (index === -1) {
             return res.status(404).send(`Song not in Set List`)
         } else {
-            setList.list.splice(index, 1)
+            setList.splice(index, 1)
             res.status(200).send(setList)
         }
     },
 
     clearList: (req, res) => {
-        setList.list = []
+        setList = []
         res.status(200).send(setList)
     }
 }

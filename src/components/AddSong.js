@@ -60,7 +60,7 @@ class AddSong extends Component {
         })
     }
     handleUpdateClick = (id, songObj) => {
-        this.props.handleUpdateSong(id, songObj)
+        this.props.handleState(id, songObj)
         this.setState({
             song_title: '',
             artist_name: '',
