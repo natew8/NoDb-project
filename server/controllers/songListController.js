@@ -13,7 +13,7 @@ url: string
 
 module.exports = {
     getAllSongs: (req, res) => {
-        res.status(200).send(songs)
+        res.status(200).send([...songs])
     },
 
     addSong: (req, res) => {
