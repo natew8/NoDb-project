@@ -7,13 +7,15 @@ function SetList(props) {
             key={index}
             item={element}
             removeSong={props.removeSong}
-            songList={props.songList}
         />
     })
     return (
         <div className={'set-list-container'}>
-            <h1 className={'set-list-title'}>Set-List 1</h1>
-            <ol>{setMap}</ol>
+            <div className={'list-header'}>
+                <h1 className={'set-list-title'}>My Set-List</h1>
+                <button className={'clear-list-button'} onClick={() => props.clearSetList()}>clear list</button>
+            </div>
+            <div>{setMap}</div>
         </div>
     )
 }

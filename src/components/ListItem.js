@@ -1,6 +1,7 @@
 import React from 'react'
 
-const ListItem = (props) => {
+function ListItem(props) {
+
 
     return (
         <li>
@@ -13,8 +14,9 @@ const ListItem = (props) => {
             <div className={'remove-button-div'}>
                 <img className={'remove-button'} src={'https://cdn1.iconfinder.com/data/icons/feather-2/24/minus-square-512.png'} onClick={() => props.removeSong(props.item.id)} />
             </div>
-        </li>
+        </li >
     )
 }
+
 
 export default ListItem

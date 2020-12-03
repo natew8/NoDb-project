@@ -42,7 +42,7 @@ module.exports = {
     },
 
     clearList: (req, res) => {
-        setList = []
+        setList.splice(0, setList.length)
         res.status(200).send(setList)
     }
 }

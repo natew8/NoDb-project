@@ -3,6 +3,7 @@
 #18171a
 #a3a0a1 
 #f7f9fc*/
+@media screen{
 /*----------------------------------------------------------------------------- MAIN  */
 *{
   box-sizing: border-box;
@@ -17,7 +18,7 @@ body{
 .header {
   background-color: #426e82;
   height: 5.5vh;
-  width: 70vw;
+  width: 670vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,6 +28,10 @@ body{
   font-size: 45px;
   color: #c3c0c1;
   overflow: hidden;
+  text-shadow: 3px -3px 10px black;
+}
+#header-text{
+  margin-top: 70px;
 }
 .footer{
   height: 5vh;
@@ -35,21 +40,46 @@ body{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-around;
-  background-color: #426e82;
+  justify-content: space-around;
   position: fixed;
   color: white;
   bottom: 0;
+}
+.printer-container{
+  width: 25%;
+}
+.share-container{
+  width: 25%;
+}
+#footer-text-1{
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+ text-shadow: 0px 0px 5px black;
+}
+#footer-text-1:hover{
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+}
+#footer-text-2{
+  margin-left: 30px;
+  height: 50px;
+  width: 50px;
+}
+#footer-text-2:hover{
+  height: 55px;
+  width: 55px;
 }
 
 
 /* -----------------------------------------------------------------------------Set-List */
 .set-list-container{
-  height: 85vh;
+  height: 83vh;
   width: 65vw;
   position: fixed;
   left: 2.5vw;
-  bottom: 5.3vh;
+  bottom: 6.5vh;
   display: flex;
   padding: 0%;
   flex-direction: column;
@@ -57,23 +87,45 @@ body{
   background-color:#f7f9fc;
   margin:0,auto;
   overflow:scroll;
-  box-shadow: 0px 0px 15px black;
+  box-shadow: 0px 3px 10px black;
+}
+.list-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
 }
 .set-list-title{
   width: 10vw;
   text-align: left;
-  padding-left: 20px;
-  position: -webkit-sticky;
-  position: sticky;
-  background-color: #c3c0c1;
   margin-left: 10px;
   margin-top: 10px;
+}
+.clear-list-button{
+  height: 3em;
+  margin: 15px;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #426e82;
+  color: white;
+  font-family:inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+.clear-list-button:hover{
+  background:#4b7f97;
+  box-shadow: 0px 0px 3px black;
 }
 a:hover{
   color: #426e42;
 }
 li{
-  width: 60.6vw;
+  width: 67vw;
   display: flex;
   font-size: large;
   flex-direction: row;
@@ -105,6 +157,11 @@ li{
   width: 33px;
   margin-left: 50px;
 }
+.remove-button:hover{
+  height: 35px;
+  width: 35px;
+  filter: saturate(100%);
+}
 a{
   color: #282c34;
   text-decoration: none;
@@ -113,14 +170,15 @@ a{
   width: 300px;
   height: 30px;
   overflow: scroll;
+ border-radius: 25px;
 }
 #notes-input:focus{
-  background-color: #c3c0c1;
+  background-color: #dadada;
 }
 
 /*----------------------------------------------------------------------------- SongList */
 .songList-container{
-  height: 79vh;
+  height: 77.8vh;
   width: 30vw;
   display: flex;
   flex-direction: column;
@@ -131,17 +189,23 @@ a{
   background-color: #f7f9fc;
 }
 .title-container{
-  height: 5.5vh;
+  height: 5.7vh;
   width: 30vw;
   background-color: #c3c0c1;
-  color:#f7f9fc;
+  color: #426e82;;
   position: absolute;
   right: 0;
   top: 0;
   border-left: 2px solid #282c34;
+  border-bottom: 2px solid  #282c34 ;
+  text-align: left;
+  padding: 0;
 }
 .song-list-title{
-  font-size: 1.5em;
+  font-size: 1.8em;
+  margin-left: 10px;
+  position: fixed;
+  margin-top: 7px;
 }
 
 .song-container{
@@ -197,12 +261,12 @@ a{
   cursor: pointer;
 }
 .song-delete-button{
+  transform: rotate(45deg);
   height: 30px;
   width: 30px;
 }
 .song-delete-button:hover{
- background: rgb(255, 0, 0);
- border-radius: 50%;
+ transform: rotate(90deg);
  cursor: pointer;
 }
 
@@ -215,14 +279,14 @@ a{
   position: fixed;
   bottom: 0%;
   right: .001%;
-  background-color: #a3a0a1;
+  background-color: #c3c0c1;
   border-top: 2px solid #282c34;
   border-left: 2.5px solid #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  color: #f7f9fc;
+  color: #426e82;
 }
 .add-song{
   margin-top: 0%;
@@ -254,6 +318,73 @@ input{
   background: none;
   border: none;
   outline: none;
+  color: #426e82;
+  font-weight: bold;
+}
+.add-update-button:hover{
+  color: #4b7f97;
+  cursor: pointer;
+}
 }
 
+@page{
+  margin: 0.5cm;
+}
 
+@media print{
+  header, footer, .songList-container, .add-song, .song-list-title, #header-text, #footer-text-1, #footer-text-2, .title-container, .remove-button, .remove-button-div,.clear-list-button{
+    display: none;
+    background: transparent;
+  }
+  .set-list-title{
+    page-break-before: always;
+  }
+  .set-list-container{
+    width:21.59cm;
+    height: 27.94cm;
+    box-shadow: none;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    padding: none;
+  }
+  .list-title{
+    width: 50%;
+    text-align: left;
+  }
+  .small-items{
+    font-weight: 100;
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+  }
+  li{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: left;
+    orphans: 3;
+    width: 100;
+    margin: 0;
+  }
+  input{
+    border:none;
+    outline:none;
+    background-color: nonne;
+  }
+  ::-webkit-input-placeholder{
+    color: transparent
+  }
+  :-moz-placeholder{
+    color: transparent;
+  }
+  ::-moz-placeholder{
+    color: transparent;
+  }
+  :-ms-input-placeholder{
+    color: transparent;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+}

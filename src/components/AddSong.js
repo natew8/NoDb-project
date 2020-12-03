@@ -72,8 +72,8 @@ class AddSong extends Component {
     render() {
 
         return (
-            <div className={'input-box'}>
-                <h2 className={'add-song'}>new song</h2>
+            <form className={'input-box'}>
+                <h2 className={'add-song'}> &lt; new song &gt; </h2>
                 <div className={'title-artist-input-container'}>
                     <input id={'title-input'} value={this.state.song_title} type={'text'} placeholder={'title'} onChange={this.handleTitle} />
                     <input id={'artist-input'} value={this.state.artist_name} type={'text'} placeholder={'artist/band'} onChange={this.handleName} />
@@ -92,7 +92,7 @@ class AddSong extends Component {
                         this.props.newSong(this.state)
                     }
                 }}>+</button> */}
-                {this.state.song_title && this.state.artist_name && this.state.time ? <button className={'add-update-button'} onClick={() => {
+                {this.state.song_title && this.state.artist_name && this.state.time || this.state.song_key ? <button className={'add-update-button'} onClick={() => {
                     if (this.props.songToEdit) {
                         this.handleUpdateClick(this.props.songToEdit.id, this.state)
                     } else {
@@ -100,7 +100,7 @@ class AddSong extends Component {
                     }
                 }}>+ add song</button> : null}
 
-            </div>
+            </form>
         )
     }
 }

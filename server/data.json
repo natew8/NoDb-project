@@ -126,5 +126,45 @@
         "song_key": "C#",
         "time": "3:45",
         "url": "https://tabs.ultimate-guitar.com/tab/jp-saxe/a-little-bit-yours-chords-3320099"
+    },
+    {
+        "id": 16,
+        "song_title": "September Song",
+        "artist_name": "JP Cooper",
+        "song_key": "A",
+        "time": "3:45",
+        "url": "https://tabs.ultimate-guitar.com/tab/jp-cooper/september-song-chords-1898553"
+    },
+    {
+        "id": 17,
+        "song_title": "Vienna",
+        "artist_name": "Billy Joel",
+        "song_key": "Bb",
+        "time": "3:45",
+        "url": "https://tabs.ultimate-guitar.com/tab/billy-joel/vienna-chords-804911"
+    },
+    {
+        "id": 18,
+        "song_title": "Take it Easy",
+        "artist_name": "The Eagles",
+        "song_key": "G",
+        "time": "3:31",
+        "url": "https://tabs.ultimate-guitar.com/tab/eagles/take-it-easy-chords-14322"
+    },
+    {
+        "id": 19,
+        "song_title": "Georgia",
+        "artist_name": "Emily King",
+        "song_key": "G",
+        "time": "4:03",
+        "url": "https://tabs.ultimate-guitar.com/tab/emily-king/georgia-chords-1502939"
+    },
+    {
+        "id": 20,
+        "song_title": "Celebration",
+        "artist_name": "Kool & the Gang",
+        "song_key": "C",
+        "time": "4:18",
+        "url": "https://www.ultimate-guitar.com/artist/kool_the_gang_1074"
     }
 ]
