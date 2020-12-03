@@ -1,33 +1,44 @@
 import React, { Component } from 'react'
-
-import Song from './Song'
 import AddSong from './AddSong'
+import Song from './Song'
+
 
 class SongList extends Component {
     constructor(props) {
         super()
         this.state = {
             songToEdit: null,
-            id: props.id
+            id: props.id,
+            visible: false
         }
     }
     handleState = (id, songObj) => {
         this.props.updateSong(id, songObj)
         setTimeout(() => {
             this.setState({
-                songToEdit: null
+                songToEdit: null,
+                visible: !this.state.visible
             })
-        }, 2000);
+        }, 500);
     }
     handleEditSong = (songObj) => {
         this.setState({
-            songToEdit: songObj
+            songToEdit: songObj,
+            visible: true
         })
     }
     handleSetListAdd = (id) => {
         this.props.addToSetList(id)
     }
-    render(props) {
+    handleMouseDown = () => {
+        this.toggleAddSong()
+    }
+    toggleAddSong = () => {
+        this.setState({
+            visible: !this.state.visible
+        })
+    }
+    render() {
         const songMap = this.props.songList.map((e, index) => {
             return (
                 <Song
@@ -37,16 +48,22 @@ class SongList extends Component {
                     deleteSong={this.props.deleteSong}
                     updateSong={this.props.updateSong}
                     songList={this.props.songList}
-                    handleEditSong={this.handleEditSong} />
+                    handleEditSong={this.handleEditSong}
+                    handleMouseDown={this.handleMouseDown} />
             )
         })
         return (
             <div className={'songList-container'}>
-                {songMap}
+                <h1 className={'song-list-title'}>Song List</h1>
+                <div className={'song-map-container'}>
+                    {songMap}
+                </div>
                 <AddSong newSong={this.props.newSong}
                     songToEdit={this.state.songToEdit}
                     updateSong={this.props.updateSong}
-                    handleState={this.handleState} />
+                    handleState={this.handleState}
+                    handleMouseDown={this.handleMouseDown}
+                    menuVisibility={this.state.visible} />
             </div>
         )
     }

@@ -9,30 +9,54 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #c3c0c1;
+  background-color: black;
+}
+
+::-webkit-scrollbar{
+width: 20px;
+
+}
+
+::-webkit-scrollbar-track{
+  background-color: #1c1c1c;
+}
+
+::-webkit-scrollbar-thumb{
+  border: 1px solid rgb(46, 46, 46);
+  background-color: #e9c80cda;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:active{
+  background-color:#e9c80c ;
 }
 .App {
   text-align: center;
   position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 .header {
-  background-color: #426e82;
-  height: 5.5vh;
-  width: 670vw;
+  height: 7vh;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  padding-left: 100px;
-  padding-top: 10px;
-  font-size: 45px;
-  color: #c3c0c1;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
   overflow: hidden;
-  text-shadow: 3px -3px 10px black;
+  position: fixed;
+  top: 0;
+  background-color:#e9c80c;
 }
 #header-text{
-  margin-top: 70px;
+  margin-left: 100px;
+  margin-top: 8vh;
 }
+
 .footer{
   height: 5vh;
   width: 70.123vw;
@@ -55,7 +79,7 @@ body{
   height: 50px;
   width: 50px;
   margin-right: 10px;
- text-shadow: 0px 0px 5px black;
+  filter: invert(1);
 }
 #footer-text-1:hover{
   height: 55px;
@@ -66,12 +90,27 @@ body{
   margin-left: 30px;
   height: 50px;
   width: 50px;
+  filter: invert(1);
 }
 #footer-text-2:hover{
   height: 55px;
   width: 55px;
+  cursor: pointer;
 }
 
+.display-container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+}
+/* .message-button{
+  position: fixed;
+  right: 100px;
+  top: 45vh;
+  color: white;
+} */
 
 /* -----------------------------------------------------------------------------Set-List */
 .set-list-container{
@@ -84,10 +123,11 @@ body{
   padding: 0%;
   flex-direction: column;
   align-items: left;
-  background-color:#f7f9fc;
+  background-color:#e4e4e4;
   margin:0,auto;
-  overflow:scroll;
-  box-shadow: 0px 3px 10px black;
+  overflow-x:hidden;
+  overflow-y: scroll;
+  border: 2px solid #686868 ;
 }
 .list-header{
   display: flex;
@@ -100,6 +140,15 @@ body{
   text-align: left;
   margin-left: 10px;
   margin-top: 10px;
+}
+#empty-set-list-message{
+  margin-top: 33vh;
+  font-style: italic;
+  color: #426e82b2;
+  font-weight: 300;
+  font-family: inherit;
+  font-size: 20px;
+  text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
 }
 .clear-list-button{
   height: 3em;
@@ -127,7 +176,7 @@ a:hover{
 li{
   width: 67vw;
   display: flex;
-  font-size: large;
+  font-size: 1em;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
@@ -139,7 +188,7 @@ li{
 }
 .small-items{
   font-weight: 100;
-  width: 200px;
+  width: 140px;
   display: flex;
   justify-content: space-between;
 }
@@ -155,7 +204,7 @@ li{
 .remove-button{
   height: 33px;
   width: 33px;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 .remove-button:hover{
   height: 35px;
@@ -171,6 +220,7 @@ a{
   height: 30px;
   overflow: scroll;
  border-radius: 25px;
+ background-color: transparent;
 }
 #notes-input:focus{
   background-color: #dadada;
@@ -178,34 +228,30 @@ a{
 
 /*----------------------------------------------------------------------------- SongList */
 .songList-container{
-  height: 77.8vh;
+  padding-top: 11.5vh;
+  height: 100%;
   width: 30vw;
-  display: flex;
-  flex-direction: column;
   position: absolute;
+  bottom: 4.7vh;
   right: 0;
   overflow: scroll;
-  border-left: 2px solid #282c34;
-  background-color: #f7f9fc;
+  border-left: 2px solid #494949;
+  background-color: #1c1c1c;
+  display: block;
+  /* transform: translate(30vw,0); */
 }
-.title-container{
-  height: 5.7vh;
-  width: 30vw;
-  background-color: #c3c0c1;
-  color: #426e82;;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-left: 2px solid #282c34;
-  border-bottom: 2px solid  #282c34 ;
-  text-align: left;
-  padding: 0;
-}
+
 .song-list-title{
-  font-size: 1.8em;
-  margin-left: 10px;
+  margin-top: -10px;
+  padding-top: 20px;
+  height: 80px;
+  width: 28.9vw;
   position: fixed;
-  margin-top: 7px;
+  top: 0;
+  color: white;
+  background-color: #1c1c1c;
+  z-index: 1
+  ;
 }
 
 .song-container{
@@ -213,7 +259,9 @@ a{
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  border-top: 2px solid #282c34;
+  border-top: 2px solid #494949;
+  background-color: black;
+  color: white;
 }
 .container-div{
   height: 100px;
@@ -234,61 +282,81 @@ a{
   align-content: center;
   text-align: left;
 }
-.name-title-div:hover{
-  color: #426e82;
+.song-title:hover{
+  color: #32afc0;
   cursor: pointer;
 }
-.name-title-div:active{
-  columns: #a3a0a1;;
-}
+
 .song-title{
   font-size: 1.5em;
   margin-bottom: 0%;
+  color: #e9c80c;
 }
 .artist-name{
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-weight: 100;
+  color: white;
 }
 
 .add-to-playlist{
-  height: 33px;
-  width: 33px;
+  height: 40px;
+  width: 40px;
+  /* background-color: white; */
+  border-radius: 50%;
+  filter: invert(1);
 }
 .add-to-playlist:hover{
-  height: 36px;
-  width: 36px;
+  filter: invert(.5);
   cursor: pointer;
 }
 .song-delete-button{
-  transform: rotate(45deg);
   height: 30px;
   width: 30px;
+  filter: invert(1);
 }
 .song-delete-button:hover{
- transform: rotate(90deg);
+ filter: invert(.5);
  cursor: pointer;
 }
 
 
 
 /*----------------------------------------------------------------------------- ADD NEW SONG */
-.input-box{
-  height: 16.8vh;
+#input-box{
+  height: 20vh;
   width: 30vw;
   position: fixed;
   bottom: 0%;
-  right: .001%;
-  background-color: #c3c0c1;
+  right: 0%;
+  background-color: #1c1c1c;
   border-top: 2px solid #282c34;
   border-left: 2.5px solid #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  color: #426e82;
+  color: #585858;
+  padding: 0;
+  transition: transform .5s;
 }
+#input-box.hide{
+  transform: translate(0,13.7vh);
+}
+#input-box.show{
+  color: white;
+  border: 1px solid #e9c80c;
+}
+
 .add-song{
+  margin-top: -1%;
+  margin-bottom: 0%;
+}
+#input-box.hide > .add-song:hover{
+  color: #909090;
+  cursor: pointer;
+}
+.update-song{
   margin-top: 0%;
   margin-bottom: 0%;
 }
@@ -302,7 +370,7 @@ input{
   outline: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
-  background-color: #f7f9fc;
+  background-color: #e9c80c;
 }
 #title-input{
   margin-right: 5px;
@@ -318,11 +386,12 @@ input{
   background: none;
   border: none;
   outline: none;
-  color: #426e82;
+  color: white;
   font-weight: bold;
+  font-size: 25px;
 }
 .add-update-button:hover{
-  color: #4b7f97;
+  color: #e9c80c;
   cursor: pointer;
 }
 }

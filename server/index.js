@@ -15,6 +15,7 @@ app.delete('/api/songList/:song_id', songListCtrl.deleteSong)
 //setList endpoints
 app.get('/api/setList', setListCtrl.getSetList)
 app.post('/api/setList/:song_id', setListCtrl.addToSetList)
+app.put('/api/setList/:list_id', setListCtrl.addNote)
 app.delete('/api/setList/:list_id', setListCtrl.removeSong)
 app.delete('/api/setList', setListCtrl.clearList)
 

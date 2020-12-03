@@ -8,9 +8,12 @@ class AddSong extends Component {
             artist_name: '',
             time: '',
             song_key: '',
-            url: ''
+            url: '',
+            visible: props.visible
         }
     }
+
+
     componentDidUpdate = (prevProps) => {
         if (prevProps.songToEdit && prevProps.songToEdit !== this.props.songToEdit && this.props.songToEdit !== null) {
             this.setState({
@@ -18,7 +21,8 @@ class AddSong extends Component {
                 artist_name: this.props.songToEdit.artist_name,
                 time: this.props.songToEdit.time,
                 song_key: this.props.songToEdit.song_key,
-                url: this.props.songToEdit.url
+                url: this.props.songToEdit.url,
+                visible: !this.props.visible
             })
         }
     }
@@ -70,10 +74,13 @@ class AddSong extends Component {
         })
     }
     render() {
-
+        let visibility = 'hide'
+        if (this.props.menuVisibility) {
+            visibility = 'show'
+        }
         return (
-            <form className={'input-box'}>
-                <h2 className={'add-song'}> &lt; new song &gt; </h2>
+            <form id={'input-box'} className={visibility}>
+                {this.props.songToEdit ? <h2 className={'update-song'} onMouseDown={this.props.handleMouseDown}>&lt;update song info&gt;</h2> : <h2 className={'add-song'} onMouseDown={this.props.handleMouseDown}> &#43; new song  </h2>}
                 <div className={'title-artist-input-container'}>
                     <input id={'title-input'} value={this.state.song_title} type={'text'} placeholder={'title'} onChange={this.handleTitle} />
                     <input id={'artist-input'} value={this.state.artist_name} type={'text'} placeholder={'artist/band'} onChange={this.handleName} />
@@ -97,8 +104,9 @@ class AddSong extends Component {
                         this.handleUpdateClick(this.props.songToEdit.id, this.state)
                     } else {
                         this.handleNewClick(this.state)
+                        this.props.handleMouseDown()
                     }
-                }}>+ add song</button> : null}
+                }}>&#43;</button> : null}
 
             </form>
         )

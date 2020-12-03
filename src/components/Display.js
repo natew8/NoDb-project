@@ -18,6 +18,7 @@ class Display extends Component {
         this.addToSetList = this.addToSetList.bind(this)
         this.removeSong = this.removeSong.bind(this)
         this.clearSetList = this.clearSetList.bind(this)
+        this.addNote = this.addNote.bind(this)
     }
 
     componentDidMount() {
@@ -39,7 +40,7 @@ class Display extends Component {
                 songList: res.data
             })
         })
-        // console.log(this.state.songList)
+        console.log(this.state.songList)
     }
     updateSong(id, songObj) {
         axios.put(`/api/songList/${id}`, songObj).then(res => {
@@ -81,15 +82,28 @@ class Display extends Component {
             })
         })
     }
+    addNote(id, body) {
+        console.log(id)
+        console.log(body)
+        axios.put(`/api/setList/${id}`, body).then(res => {
+            this.setState({
+                setList: res.data
+            })
+        })
+
+    }
     render() {
         return (
-            <div>
+            <div className={'display-container'}>
                 <SetList
                     setList={this.state.setList}
                     songList={this.state.songList}
                     removeSong={this.removeSong}
                     clearSetList={this.clearSetList}
+                    note={this.state.note}
+                    addNote={this.addNote}
                 />
+                {/* <h1 className={'message-button'}>Click Here to view Song List</h1> */}
                 <SongList
                     setList={this.state.setList}
                     newSong={this.newSong}

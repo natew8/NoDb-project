@@ -2,6 +2,7 @@ const songs = require('../data.json')
 const setList = []
 
 let listId = 0
+let note = ''
 
 
 module.exports = {
@@ -17,6 +18,7 @@ module.exports = {
         } else {
             const song = songs.find((element) => element.id === +song_id)
             song.list_id = listId
+            song.note = note
             if (setList.includes(song)) {
                 res.status(500).send('Song already in Set List')
             } else {
@@ -44,5 +46,19 @@ module.exports = {
     clearList: (req, res) => {
         setList.splice(0, setList.length)
         res.status(200).send(setList)
+    },
+    addNote: (req, res) => {
+        const { list_id } = req.params
+        const { note } = req.body
+        const index = setList.findIndex(e => e.list_id === +list_id)
+        let listSong = setList[index]
+        setList[index] = {
+            ...listSong, note: note
+        }
+        console.log(note)
+        console.log(index)
+        console.log(list_id)
+        res.status(200).send(setList)
+
     }
 }
