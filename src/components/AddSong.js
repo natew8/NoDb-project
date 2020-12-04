@@ -80,7 +80,7 @@ class AddSong extends Component {
         }
         return (
             <form id={'input-box'} className={visibility}>
-                {this.props.songToEdit ? <h2 className={'update-song'} onMouseDown={this.props.handleMouseDown}>&lt;update song info&gt;</h2> : <h2 className={'add-song'} onMouseDown={this.props.handleMouseDown}> &#43; new song  </h2>}
+                {this.props.songToEdit ? <h2 className={'update-song'} onMouseDown={this.props.handleMouseDown}>Edit: {this.props.songToEdit.song_title}</h2> : <h2 className={'add-song'} onMouseDown={this.props.handleMouseDown}> &#43; new song  </h2>}
                 <div className={'title-artist-input-container'}>
                     <input id={'title-input'} value={this.state.song_title} type={'text'} placeholder={'title'} onChange={this.handleTitle} />
                     <input id={'artist-input'} value={this.state.artist_name} type={'text'} placeholder={'artist/band'} onChange={this.handleName} />
