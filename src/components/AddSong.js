@@ -80,7 +80,13 @@ class AddSong extends Component {
         }
         return (
             <form id={'input-box'} className={visibility}>
-                {this.props.songToEdit ? <h2 className={'update-song'} onMouseDown={this.props.handleMouseDown}>Edit: {this.props.songToEdit.song_title}</h2> : <h2 className={'add-song'} onMouseDown={this.props.handleMouseDown}> &#43; new song  </h2>}
+                {this.props.songToEdit ?
+                    <h2 className={'update-song'} onMouseDown={this.props.handleMouseDown}>Edit: {this.props.songToEdit.song_title}</h2> :
+                    <h2 className={'add-song'} onMouseDown={this.props.handleMouseDown}>
+                        <h2 id={'plus-exit'} className={visibility}>&#43;</h2>
+                        <h2>new song</h2>
+                    </h2>
+                }
                 <div className={'title-artist-input-container'}>
                     <input id={'title-input'} value={this.state.song_title} type={'text'} placeholder={'title'} onChange={this.handleTitle} />
                     <input id={'artist-input'} value={this.state.artist_name} type={'text'} placeholder={'artist/band'} onChange={this.handleName} />
@@ -99,7 +105,7 @@ class AddSong extends Component {
                         this.props.newSong(this.state)
                     }
                 }}>+</button> */}
-                {this.state.song_title && this.state.artist_name && this.state.time || this.state.song_key ? <button className={'add-update-button'} onClick={() => {
+                {(this.state.song_title && this.state.artist_name) && (this.state.time || this.state.song_key) ? <button className={'add-update-button'} onClick={() => {
                     if (this.props.songToEdit) {
                         this.handleUpdateClick(this.props.songToEdit.id, this.state)
                     } else {

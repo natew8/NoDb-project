@@ -75,7 +75,7 @@ class Display extends Component {
         })
     }
     clearSetList() {
-        console.log(this.state.setList)
+        // console.log(this.state.setList)
         axios.delete('/api/setList').then(res => {
             this.setState({
                 setList: []
@@ -83,8 +83,8 @@ class Display extends Component {
         })
     }
     addNote(id, body) {
-        console.log(id)
-        console.log(body)
+        // console.log(id)
+        // console.log(body)
         axios.put(`/api/setList/${id}`, body).then(res => {
             this.setState({
                 setList: res.data

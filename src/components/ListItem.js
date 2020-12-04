@@ -31,7 +31,7 @@ class ListItem extends Component {
                     <h2 className={'list-small-item'}>{this.props.item.time}</h2>
                     <h2 className={'list-small-item'}>{this.props.item.song_key}</h2>
                 </div>
-                <input value={this.state.note} id={'notes-input'} placeholder={'notes'} type={'text'} onChange={this.handleInput} onKeyPress={this.handleKeyHit} />
+                <input value={this.state.note} className={'notes-input'} placeholder={'notes'} type={'text'} onChange={this.handleInput} onKeyPress={this.handleKeyHit} />
                 <div className={'remove-button-div'}>
                     <img className={'remove-button'} src={'https://cdn1.iconfinder.com/data/icons/feather-2/24/minus-square-512.png'} alt={'remove from list'} onClick={() => this.props.removeSong(this.props.item.id)} />
                 </div>

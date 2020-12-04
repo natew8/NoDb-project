@@ -51,6 +51,7 @@ width: 20px;
   position: fixed;
   top: 0;
   background-color:#e9c80c;
+  
 }
 #header-text{
   margin-left: 100px;
@@ -128,6 +129,8 @@ width: 20px;
   overflow-x:hidden;
   overflow-y: scroll;
   border: 2px solid #686868 ;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 .list-header{
   display: flex;
@@ -152,7 +155,7 @@ width: 20px;
 }
 .clear-list-button{
   height: 3em;
-  margin: 15px;
+  margin: 10px;
   border: 0;
   border-radius: 0.25rem;
   background: #426e82;
@@ -171,7 +174,7 @@ width: 20px;
   box-shadow: 0px 0px 3px black;
 }
 a:hover{
-  color: #426e42;
+  color: #426e82;
 }
 li{
   width: 67vw;
@@ -215,14 +218,14 @@ a{
   color: #282c34;
   text-decoration: none;
 }
-#notes-input{
+.notes-input{
   width: 300px;
   height: 30px;
   overflow: scroll;
  border-radius: 25px;
  background-color: transparent;
 }
-#notes-input:focus{
+.notes-input:focus{
   background-color: #dadada;
 }
 
@@ -262,6 +265,8 @@ a{
   border-top: 2px solid #494949;
   background-color: black;
   color: white;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 .container-div{
   height: 100px;
@@ -338,7 +343,7 @@ a{
   justify-content: space-evenly;
   color: #585858;
   padding: 0;
-  transition: transform .5s;
+  transition: transform 1s;
 }
 #input-box.hide{
   transform: translate(0,13.7vh);
@@ -348,11 +353,25 @@ a{
   border: 1px solid #e9c80c;
 }
 
-.add-song{
-  margin-top: -1%;
-  margin-bottom: 0%;
+.add-song{ 
+  margin-top: -20px;
+  margin-bottom: -20px;
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+}
+#plus-exit.show{
+  transform: rotate(45deg);
+  transition: transform 1s;
+}
+#plus-exit.hide{
+  transition: transform 1s;
 }
 #input-box.hide > .add-song:hover{
+  color: #909090;
+  cursor: pointer;
+}
+#input-box.show > .add-song:hover {
   color: #909090;
   cursor: pointer;
 }
@@ -418,7 +437,7 @@ input{
     padding: none;
   }
   .list-title{
-    width: 50%;
+    width: 25%;
     text-align: left;
   }
   .small-items{
