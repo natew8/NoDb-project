@@ -14,12 +14,10 @@ class SongList extends Component {
     }
     handleState = (id, songObj) => {
         this.props.updateSong(id, songObj)
-        setTimeout(() => {
-            this.setState({
-                songToEdit: null,
-                visible: !this.state.visible
-            })
-        }, 500);
+        this.setState({
+            songToEdit: null,
+            visible: !this.state.visible
+        })
     }
     handleEditSong = (songObj) => {
         this.setState({

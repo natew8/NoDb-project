@@ -213,6 +213,7 @@ li{
   height: 35px;
   width: 35px;
   filter: saturate(100%);
+  cursor: pointer;
 }
 a{
   color: #282c34;
